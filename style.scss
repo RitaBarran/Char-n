@@ -1,0 +1,548 @@
+
+/*Colores*/
+
+$amarillo: #d49200;
+$naranja: #ee7d19;
+
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+/*Menú */
+.logo_nav {
+    display: block;
+    height: 4rem;
+    width: auto;
+    object-fit: contain;
+    object-position: left center;
+    margin-top: 18px;
+}
+
+#nav{
+    width:100%;
+    height: 60vh;
+    background-image: url("img/web.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    padding: 20px;
+    position: relative;
+}
+
+#nav > a {
+    display: block;
+    line-height: 0;
+}
+
+header div nav ul,
+#nav #menu ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+    padding: 30px 50px;
+}
+
+nav ul li a{
+
+    text-decoration: none;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 0.75em;
+   
+}
+
+nav ul li img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+   
+    }
+#lupa{
+    margin-top: 2%;
+}
+#boton-busqueda {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+
+    img {
+        display: block;
+    }
+}
+
+
+#contenido-hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-200%, -10%);
+    text-align:left;
+    
+}
+#contenido-hero a,
+#redesSociales #h2redes a {
+     display: inline-block;
+    text-decoration: none;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    border: 2px solid black;
+    text-align: left;
+
+    &:hover {
+        background-color: $amarillo;
+        color: white;
+        border-color: transparent;
+    }
+}
+
+#nav #menu a:hover {
+    color: white;
+}
+
+
+
+h1,
+#redesSociales #h2redes h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+/*Buscador*/
+#buscador {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100px;
+
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    z-index: 1000;
+
+    // Empieza escondido arriba
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
+
+    &.activo {
+        transform: translateY(0);
+    }
+}
+#campo-busqueda {
+    width: 70%;
+    padding: 30px 15px;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+   
+
+    &::placeholder {
+        color: #777;
+    }
+}
+#cerrar-busqueda {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-left: 20px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size:1rem;
+    cursor: pointer;
+
+     &:hover {
+        transform: scale(1.2);
+    }
+}
+
+/* Seccion 1 - Presentación*/
+
+.nosotros{
+    padding: 40px;
+    display: flex;
+    gap: 30px;
+}
+
+#presentación p{
+    text-align: left;
+    font-size:medium;
+    
+}
+
+#presentación{
+   border-bottom: 3px solid $naranja;
+   flex: 1;
+}
+
+#presentación2{
+   flex: 1;
+}
+#presentación2 p{
+   font-size:small;
+    margin-bottom: 30px;
+    
+}
+
+/* Seccion 2 - Portfolio*/
+
+#titulo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 75%;
+    margin: 0 auto;
+}
+
+#portfolio {
+    h2{
+        font-weight: 300;
+        padding-bottom: 2%;
+        font-size: 1rem;
+    }
+
+    #servicios {
+        width: 75%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+
+        .proyecto {
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                display: block;
+                transition: filter 0.35s ease;
+            }
+
+            &:hover img {
+                filter: brightness(0.92) saturate(1.08);
+            }
+
+            h3 {
+                font-weight: 600;
+                font-size: 1rem;
+                margin-top: 0.75rem;
+                position: relative;
+                padding-top: 0.65rem;
+                transition: color 0.35s ease;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 2.5rem;
+                    height: 2.5px;
+                    background-color: $naranja;
+                }
+            }
+
+            &:hover h3 {
+                color: $naranja;
+            }
+
+            p {
+                font-size: 0.8rem;
+                transition: color 0.35s ease;
+            }
+
+            &:hover p {
+                color: #555;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    #portfolio #servicios {
+        grid-template-columns: 1fr;
+    }
+
+    .nosotros {
+        flex-direction: column;
+    }
+}
+
+/*Footer*/
+
+.piePágina{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+    border-top: 1.5px solid $naranja;
+    margin-top: 1.5%;
+    
+}
+
+.logo-footer{
+    width:14rem;
+    height: auto;
+    filter: brightness(0);
+    transition: transform 0.3s ease;
+}
+.logo-footer:hover {
+    transform: scale(1.15);
+}
+.redes-footer{
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.red-btn{
+    display: inline-flex;
+    color: #000;
+    line-height: 0;
+    transition: transform 0.3s ease;
+}
+.red-btn:hover {
+    transform: scale(1.15);
+}
+.red-btn svg{
+    width: 1.9rem;
+    height: 1.9rem;
+    display: block;
+}
+footer div p{
+    color: #000;
+
+}
+
+/* Seccion Redes */
+#redesSociales {
+    position: relative;
+    width: 100%;
+    min-height: 360px;
+    margin-top: 5rem;
+    padding: 2.5% 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    background-color: #f5a623;
+    background-image: url('img/PANTALLASBEHAME-06.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center right;
+    line-height: normal;
+}
+
+#redesSociales #h2redes {
+    position: relative;
+    z-index: 2;
+    flex: 0 1 38%;
+    max-width: 420px;
+    text-align: left;
+}
+
+#redesSociales #h2redes h2 {
+    margin-bottom: 1.5rem;
+    line-height: 1.15;
+    text-transform: uppercase;
+    color: #000;
+    font-size: 2rem;
+}
+
+#redesSociales #imgRedes {
+    flex: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#redesSociales #imgRedes img {
+    width: min(260px, 32vw);
+    height: auto;
+    display: block;
+}
+
+/* Página Servicios */
+.pagina-servicios {
+    background-color: #fff;
+}
+
+.pagina-servicios #nav {
+    height: auto;
+    min-height: 0;
+}
+
+.pagina-servicios #nav > a {
+    display: block;
+    line-height: 0;
+}
+
+.servicios-main {
+    width: 75%;
+    margin: 0 auto;
+    padding: 3rem 0 4rem;
+}
+
+.servicios-intro h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.servicios-intro p {
+    font-size: 1rem;
+    font-weight: 300;
+    max-width: 40rem;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+}
+
+.servicios-listado {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.servicios-columna h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2.5px solid $naranja;
+}
+
+.servicios-columna ul {
+    list-style: none;
+    padding: 0;
+}
+
+.servicios-columna li {
+    font-size: 0.95rem;
+    font-weight: 300;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.servicios-contacto h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.servicios-contacto > p {
+    font-size: 0.95rem;
+    font-weight: 300;
+    margin-bottom: 1.75rem;
+}
+
+.form-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 32rem;
+}
+
+.form-contacto label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.form-contacto input,
+.form-contacto select,
+.form-contacto textarea {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #000;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: block;
+    margin-left: 0;
+    align-self: stretch;
+}
+
+.form-contacto select {
+    align-self: flex-start;
+    width: 100%;
+    text-align: left;
+    text-align-last: left;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23000' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.85rem center;
+    padding-right: 2.25rem;
+}
+
+.form-contacto input:focus,
+.form-contacto select:focus,
+.form-contacto textarea:focus {
+    border-color: $naranja;
+}
+
+.form-contacto textarea {
+    resize: vertical;
+    min-height: 8rem;
+}
+
+.form-contacto .boton {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: 1.25rem;
+    text-decoration: none;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.form-contacto .boton:hover {
+    background-color: $amarillo;
+    color: white;
+    border-color: transparent;
+}
+
+@media (max-width: 768px) {
+    .servicios-main {
+        width: 90%;
+    }
+
+    .servicios-listado {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+

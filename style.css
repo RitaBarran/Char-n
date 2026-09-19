@@ -1,0 +1,10 @@
+#contenido-hero a {
+  border: 2px solid black;
+}
+#contenido-hero a:hover {
+  background-color: #f4aba1;
+  color: white;
+  border-color: transparent;
+}
+
+/*# sourceMappingURL=style.css.map */
