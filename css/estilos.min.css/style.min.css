@@ -1,1 +1,287 @@
 
+@charset "UTF-8";
+/*Colores*/
+#contenido-hero a {
+  border: 2px solid black;
+}
+#contenido-hero a:hover {
+  background-color: #d49200;
+  color: white;
+  border-color: transparent;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/*Menú */
+#nav {
+  width: 100%;
+  height: 60vh;
+  background-image: url("img/web.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+#nav {
+  position: relative;
+}
+
+header div nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  gap: 10px;
+  padding: 30px 50px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 0.75em;
+}
+
+nav ul li img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+#lupa {
+  margin-top: 2%;
+}
+
+#boton-busqueda {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+#boton-busqueda img {
+  display: block;
+}
+
+#contenido-hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-200%, -10%);
+  text-align: left;
+}
+
+#contenido-hero a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  border: 1px solid black;
+  text-align: left;
+}
+
+#nav a:hover {
+  color: white;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
+/*Buscador*/
+#buscador {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  z-index: 1000;
+  /* transform: translateY(-100%);
+
+   // Animación
+   transition: transform 0.4s ease;*/
+}
+
+#campo-busqueda {
+  width: 70%;
+  padding: 30px 15px;
+  border: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+}
+#campo-busqueda::placeholder {
+  color: #777;
+}
+
+#cerrar-busqueda {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-left: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+}
+#cerrar-busqueda:hover {
+  transform: scale(1.2);
+}
+
+/*#buscador{
+
+    position: absolute;
+    top: 0%;
+    right: 20%;
+    transform: translate(50%, 150%);
+
+
+}
+
+#boton-busqueda{
+    background-color: transparent;
+
+
+}
+
+#campo-busqueda{
+    width: 50rem;
+    height: 2rem;
+    border-color: $naranja;
+    border-style:outset;
+   background-color: transparent;
+   font-family: poppins;
+   font-weight: 100;
+   color: black;
+   text-align: center;
+
+ &::placeholder {
+        color:black;
+    }
+
+}*/
+/* Seccion 1 - Presentación*/
+.nosotros {
+  padding: 40px;
+  display: flex;
+  gap: 30px;
+}
+
+#presentación p {
+  text-align: left;
+  font-size: medium;
+}
+
+#presentación {
+  border-bottom: 3px solid #ee7d19;
+  width: 100vh;
+}
+
+#presentación2 {
+  width: 100vh;
+}
+
+#presentación2 p {
+  font-size: small;
+  margin-bottom: 30px;
+}
+
+/* Seccion 2 - Portfolio*/
+#titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#portfolio h2 {
+  font-weight: 300;
+  padding-bottom: 2%;
+  font-size: 600;
+}
+#portfolio .grilla {
+  width: 75%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+#portfolio .grilla img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  #portfolio .grilla {
+    grid-template-columns: 1fr;
+  }
+}
+/*Footer*/
+.piePágina {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2%;
+  border-top: 1.5px solid #ee7d19;
+  margin-top: 1.5%;
+}
+
+.logo-footer {
+  width: 14rem;
+  height: auto;
+  filter: brightness(0);
+  transition: transform 0.3s ease;
+}
+
+.logo-footer:hover {
+  transform: scale(1.15);
+}
+
+.redes-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.red-btn {
+  display: inline-flex;
+  color: #000;
+  line-height: 0;
+  transition: transform 0.3s ease;
+}
+
+.red-btn:hover {
+  transform: scale(1.15);
+}
+
+.red-btn svg {
+  width: 1.9rem;
+  height: 1.9rem;
+  display: block;
+}
+
+footer div p {
+  color: #000;
+}
