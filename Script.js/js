@@ -1,0 +1,136 @@
+//* Buscador*//
+const botonBusqueda = document.querySelector("#boton-busqueda");
+const cerrarBusqueda = document.querySelector("#cerrar-busqueda");
+const buscador = document.querySelector("#buscador");
+const campoBusqueda = document.querySelector("#campo-busqueda");
+
+function abrirBusqueda() {
+  buscador.classList.add("activo");
+  campoBusqueda.focus();
+}
+
+function cerrarPanelBusqueda() {
+  buscador.classList.remove("activo");
+  campoBusqueda.value = "";
+  filtrarProyectos("");
+}
+
+function filtrarProyectos(texto) {
+  const query = texto.trim().toLowerCase();
+  const contenedor = document.querySelector("#servicios");
+  const proyectos = document.querySelectorAll("#servicios .proyecto");
+  let visibles = 0;
+
+  proyectos.forEach(function (proyecto) {
+    const titulo = proyecto.querySelector("h3");
+    const parrafo = proyecto.querySelector("p");
+    const nombre = titulo ? titulo.textContent.toLowerCase() : "";
+    const servicio = parrafo ? parrafo.textContent.toLowerCase() : "";
+    const coincide =
+      query === "" || nombre.includes(query) || servicio.includes(query);
+
+    proyecto.style.display = coincide ? "" : "none";
+    if (coincide) {
+      visibles = visibles + 1;
+    }
+  });
+
+  let vacio = document.querySelector("#sin-resultados");
+
+  if (visibles === 0 && query !== "") {
+    if (!vacio) {
+      vacio = document.createElement("p");
+      vacio.id = "sin-resultados";
+      vacio.textContent = "No encontramos proyectos con esa búsqueda.";
+      contenedor.appendChild(vacio);
+    }
+  } else if (vacio) {
+    vacio.remove();
+  }
+}
+
+botonBusqueda.addEventListener("click", function () {
+  if (buscador.classList.contains("activo")) {
+    cerrarPanelBusqueda();
+  } else {
+    abrirBusqueda();
+  }
+});
+
+cerrarBusqueda.addEventListener("click", cerrarPanelBusqueda);
+
+campoBusqueda.addEventListener("input", function () {
+  filtrarProyectos(campoBusqueda.value);
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    cerrarPanelBusqueda();
+  }
+});
+
+const seccionServicios = document.querySelector("#servicios")
+productos.forEach((producto) => {
+  const card = document.createElement("article")
+  card.className = "proyecto"
+  card.innerHTML = `
+    <img src="${producto.img[0]}" alt="${producto.nombre}">
+    <h3>${producto.nombre}</h3>
+    <p>${producto.servicio}</p>
+    
+  `
+  seccionServicios.appendChild(card)
+})
+
+let producto1 = {
+    id: 1,
+    img: ["img/proyecto1.jpg"],
+    nombre: "Bella",
+    servicio: "Rediseño de marca",
+    
+}
+
+
+let producto2 = {
+    id: 2,
+    img:["img/proyecto2.jpg"],
+    nombre: "Sweet Juice",
+    servicio: "Diseño de packaging",
+    
+}
+let producto3 = {
+    id: 3,
+    img: ["img/proyecto3.jpg"],
+    nombre: "Brand Beach",
+    servicio: "Desarrollo de marca",
+    
+}
+
+
+let producto4 = {
+    id: 4,
+    img: ["img/proyecto4.jpg"],
+    nombre: "Smart Agency",
+    servicio: "Diseño corporativo",
+    
+}
+
+
+let producto5 = {
+    id: 5,
+    img: ["img/proyecto5.jpg"],
+    nombre: "Dittils",
+    servicio: "Desarrollo de marca",
+    
+}
+
+let producto6 = {
+    id: 6,
+    img: ["img/proyecto6.jpg"],
+    nombre: "Baer Beer",
+    servicio: "Diseño de packaging",
+      
+}
+
+const productos = [producto1, producto2, producto3, producto4, producto5, producto6];
+
